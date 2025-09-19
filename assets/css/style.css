@@ -1,0 +1,134 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary--color: #fff;
+}
+
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Public Sans", sans-serif;
+}
+
+.container {
+  width: 430px;
+  max-width: calc(100% - 3.5rem);
+  margin: 0 auto; /* center the container by use margin top and bottom 0 and left and right auto*/
+}
+
+a {
+  text-decoration: none; /* remove the underline of the link*/
+}
+
+/* hero */
+
+.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url(../img/bgcm1.png);
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 101vh;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 150px;
+  border: 3px solid #fff;
+  box-shadow: -3px 6px 16px -1px rgba(0, 0, 0, 0.3);
+}
+
+.name {
+  color: #fff;
+  text-align: center;
+
+  /* DROW SHADOW */
+  text-shadow: -4px 10px 9px rgba(0, 0, 0, 0.15);
+
+  /* Name */
+  font-family: "Francois One";
+  font-size: 6.1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  margin-top: 19px;
+}
+
+.status {
+  color: #fff;
+
+  /* notice drop shadow */
+  text-shadow: -1px 3px 5px rgba(0, 0, 0, 0.31);
+
+  /* NOTICE */
+  font-family: "Chiron GoRound TC";
+  font-size: 2.4rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 5px;
+}
+
+.cta__list {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  width: 246px;
+  height: 76px;
+  margin-top: 35px;
+  background: rgba(0, 0, 0, 0.05);
+  color: #fff;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 40px;
+  border: 3px solid #fff;
+}
+
+.button__content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.button__text {
+  font-family: Oswald;
+  font-size: 2.4rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-shadow: -1px 3px 5px rgba(0, 0, 0, 0.31);
+}
+
+.button__arrow {
+  filter: drop-shadow(-4px 10px 9px rgba(0, 0, 0, 0.15));
+}
+
+.social__list {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
