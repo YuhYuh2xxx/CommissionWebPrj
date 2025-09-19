@@ -135,6 +135,11 @@ a {
   margin-top: 5px;
 }
 
+.cta{
+  display: flex;
+  justify-content:center;
+}
+
 .cta__list {
   display: flex;
   flex-direction: column;

@@ -1,0 +1,46 @@
+/* PC */
+@media (min-width: 992px) {
+  /* Đổi hình nền cho desktop */
+  .bg-1 {
+    background-image: url(../img/bgc.jpg); /* ảnh khác cho desktop */
+  }
+  .bg-2 {
+    background-image: url(../img/bgc2.jpg);
+  }
+  .bg-3 {
+    background-image: url(../img/Illustration33.png);
+  }
+  
+  .cta__list {
+    flex-direction: row;
+    gap: 30px;
+  }
+
+  .button {
+    height: 60px;
+  }
+
+  .button__text--tos {
+    font-size: 0; /* ẩn text gốc */
+  }
+
+  /* Ví dụ: Đổi text cho button TOS */
+  .button__text--tos::after {
+    content: "TERM OF SERVICES AND COMMISSION";
+    font-size: 2.4rem;
+    color: #fff;
+  }
+
+  .button__tos {
+    width: 410px;
+  }
+}
+/* TABLET AND MOBILE */
+@media (max-width: 991.98px) {
+}
+/* TABLET */
+@media (min-width: 768px) and (max-width: 991.98px) {
+}
+/* MOBILE */
+@media (max-width: 767.98px) {
+}
