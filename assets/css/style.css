@@ -30,13 +30,63 @@ a {
 /* hero */
 
 .hero {
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url(../img/bgcm1.png);
-  background-size: cover;
+  position: relative;
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background-color: #000; /* nền cuối cùng để không bị nháy trắng */
+}
+
+.hero .container {
+  position: relative;
+  z-index: 1; /* đảm bảo nội dung nằm trên các lớp nền */
+}
+
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-color: rgba(0, 0, 0, 0.4); /* làm tối ~40% */
+  background-blend-mode: multiply; /* trộn màu nền với ảnh để tối đi */
+  opacity: 0;
+  animation: fade 9s ease-out infinite; /* 3 ảnh × 3s */
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bg-1 {
+  background-image: url(../img/bgcm1.png);
+  animation-delay: 0s; /* bắt đầu từ đầu chu kỳ */
+}
+.bg-2 {
+  background-image: url(../img/bgcm2.png);
+  animation-delay: 3s;
+}
+.bg-3 {
+  background-image: url(../img/bgcm3.png);
+  animation-delay: 6s;
+}
+
+@keyframes fade {
+  /* Chu kỳ 3s/ảnh trong tổng 9s: 0.9s fade-in, 2s giữ, 0.9s fade-out, còn lại ẩn. */
+  0% {
+    opacity: 0; /* bắt đầu hiện ngay để không có khoảng đen */
+  }
+  10% {
+    opacity: 1;
+  } /* 0.9s / 9s = 10% */
+  32.222% {
+    opacity: 1;
+  } /* 2s giữ: 2 / 9 ≈ 22.222% → 10% + 22.222% */
+  42.222% {
+    opacity: 0;
+  } /* 0.9s fade-out: +10% */
+  100% {
+    opacity: 0;
+  }
 }
 
 .profile {
@@ -86,7 +136,6 @@ a {
 }
 
 .cta__list {
-  margin-top: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -105,6 +154,8 @@ a {
   align-items: center;
   border-radius: 40px;
   border: 3px solid #fff;
+  transform-origin: center;
+  transition: transform 375ms ease-out;
 }
 
 .button__content {
@@ -131,4 +182,8 @@ a {
   display: flex;
   justify-content: center;
   gap: 20px;
+}
+
+.button:hover {
+  transform: scale(1.05);
 }
