@@ -10,7 +10,7 @@
   .bg-3 {
     background-image: url(../img/Illustration33.png);
   }
-  
+
   .cta__list {
     flex-direction: row;
     gap: 30px;
@@ -40,6 +40,15 @@
 }
 /* TABLET */
 @media (min-width: 768px) and (max-width: 991.98px) {
+  .bg-1 {
+    background-image: url(../img/BGCT.png); /* ảnh khác cho desktop */
+  }
+  .bg-2 {
+    background-image: url(../img/BGCT2.png);
+  }
+  .bg-3 {
+    background-image: url(../img/BGCT3.png);
+  }
 }
 /* MOBILE */
 @media (max-width: 767.98px) {
