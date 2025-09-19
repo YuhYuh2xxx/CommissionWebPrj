@@ -173,7 +173,7 @@ a {
   text-shadow: -1px 3px 5px rgba(0, 0, 0, 0.31);
 }
 
-.button__arrow {
+.button__arrow svg {
   filter: drop-shadow(-4px 10px 9px rgba(0, 0, 0, 0.15));
 }
 
@@ -184,6 +184,35 @@ a {
   gap: 20px;
 }
 
+.social__button {
+  filter: drop-shadow(-4px 10px 9px rgba(0, 0, 0, 0.15));
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.social__button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease, height 0.3s ease;
+  z-index: -1;
+}
+
 .button:hover {
   transform: scale(1.05);
+}
+
+.social__button:hover {
+  transform: scale(1.1);
+}
+
+.social__button:hover::before {
+  width: 60px;
+  height: 60px;
 }
